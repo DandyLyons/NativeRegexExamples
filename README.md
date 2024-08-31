@@ -122,7 +122,7 @@ The Swift `Regex` type is not `Sendable`. Apparently, this is because `Regex` al
 - [Mastering the Swift Testing Framework | Fatbobman's Blog](https://fatbobman.com/en/posts/mastering-the-swift-testing-framework/#parameterized-testing)
 - I'm taking copious [notes](https://dandylyons.github.io/notes/Topics/Software-Development/Programming-Languages/Swift/testing-in-Swift/swift-testing) on `swift-testing` here. 
 
-%% ## Installation
+## Installation
 Add NativeRegexExamples as a package dependency in your project's Package.swift:
 
 ```swift
@@ -134,20 +134,19 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/ladvoc/BijectiveDictionary.git",
-            .upToNextMinor(from: "0.1.0")
+            .upToNextMinor(from: "0.0.1")
         )
     ],
     targets: [
         .target(
             name: "MyTarget",
             dependencies: [
-                .product(name: "BijectiveDictionary", package: "BijectiveDictionary")
+                .product(name: "NativeRegexExamples", package: "NativeRegexExamples")
             ]
         )
     ]
 )
 ``` 
-%%
 
 ## Project Status
 The project is in an early development phase. Current goals:
