@@ -24,7 +24,7 @@ one SSN -> 111-11-1111
   text.replace(ssnRegex, with: "___")
 // text is now:
 //  one SSN -> ___
-//  ⬛︎⬛︎⬛︎ <- another SSN
+//  ___ <- another SSN
 }
 ```
 
@@ -133,7 +133,7 @@ let package = Package(
     name: "MyPackage",
     dependencies: [
         .package(
-            url: "https://github.com/ladvoc/BijectiveDictionary.git",
+            url: "https://github.com/DandyLyons/NativeRegexExamples",
             .upToNextMinor(from: "0.0.1")
         )
     ],
