@@ -158,4 +158,4 @@ The project is in an early development phase. Current goals:
 Your contributions are very welcome! 
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE file](https://github.com/ladvoc/BijectiveDictionary/blob/main/LICENSE) for details.
+This project is licensed under the MIT License. See the [LICENSE file](https://github.com/DandyLyons/NativeRegexExamples/blob/main/LICENSE) for details.
