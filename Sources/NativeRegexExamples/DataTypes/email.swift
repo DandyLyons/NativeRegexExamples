@@ -6,7 +6,6 @@ public extension RegexLiterals {
 
 public extension RegexBuilders {
   static let email = Regex {
-    "/"
     OneOrMore {
       CharacterClass(
         .anyOf("._%+-"),
@@ -31,7 +30,6 @@ public extension RegexBuilders {
         ("a"..."z")
       )
     }
-    "/"
   }
   .anchorsMatchLineEndings()
 }
