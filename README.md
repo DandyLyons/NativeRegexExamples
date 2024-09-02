@@ -159,5 +159,15 @@ The project is in an early development phase. Current goals:
 
 Your contributions are very welcome! 
 
+## Star History
+
+<a href="https://star-history.com/#DandyLyons/NativeRegexExamples&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=DandyLyons/NativeRegexExamples&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=DandyLyons/NativeRegexExamples&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=DandyLyons/NativeRegexExamples&type=Date" />
+ </picture>
+</a>
+
 ## License
 This project is licensed under the MIT License. See the [LICENSE file](https://github.com/DandyLyons/NativeRegexExamples/blob/main/LICENSE) for details.
