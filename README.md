@@ -1,4 +1,7 @@
 # NativeRegexExamples
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FDandyLyons%2FNativeRegexExamples%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/DandyLyons/NativeRegexExamples)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FDandyLyons%2FNativeRegexExamples%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/DandyLyons/NativeRegexExamples)
+
 NativeRegexExamples is a place for the Swift community to: 
 1. crowd-source `Regex` solutions that can be used in your projects
 2. learn from each other and develop best practices
