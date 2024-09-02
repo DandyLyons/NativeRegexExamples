@@ -25,13 +25,7 @@ let package = Package(
               .enableExperimentalFeature("StrictConcurrency"),
             ]
         ),
-        .testTarget(
-            name: "NativeRegexExamplesTests",
-            dependencies: [
-              "NativeRegexExamples",
-              .product(name: "CustomDump", package: "swift-custom-dump"),
-            ]
-        ),
+        // "NativeRegexExamplesTests" is only available on Swift 6 as it requires Swift Testing
     ],
     swiftLanguageVersions: [.v5]
 )
