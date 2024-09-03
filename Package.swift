@@ -18,7 +18,6 @@ let package = Package(
         .target(
             name: "NativeRegexExamples",
             dependencies: [
-              .product(name: "CustomDump", package: "swift-custom-dump"),
             ],
             swiftSettings: [
               .enableUpcomingFeature("BareSlashRegexLiterals"),
