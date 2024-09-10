@@ -14,7 +14,7 @@ public extension RegexBuilders {
   ///
   /// This regex is provided for learning purposes, but it is much better to use the regex parsers that ship in the
   /// Foundation library as they support a wide variety of formats and they account for locale.
-  static let date_MM_DD_YYYY: Regex<(Substring)> = Regex {
+  static let date_MM_DD_YYYY = Regex {
     Anchor.wordBoundary
     ChoiceOf {
       Regex {
@@ -49,29 +49,22 @@ public extension RegexBuilders {
   }
   .anchorsMatchLineEndings()
 
-//  /// An example of using one of Foundation's built in date parser.
-//  ///
-//  ///
-//  static let iso8601: Regex<(Date)> = Regex {
-//    One(
-//      .iso8601(
-//        timeZone: .gmt,
-//        includingFractionalSeconds: false,
-//        dateSeparator: .dash,
-//        dateTimeSeparator: .standard,
-//        timeSeparator: .omitted
-//      )
-//    )
-//  }
-  
-  static let date = Regex {
+  /// An example of using one of Foundation's built in date parser.
+  ///
+  ///
+  static let iso8601: Regex<(Date)> = Regex {
     One(
-      .dateTime(
-        date: .numeric,
-        time: .omitted,
-        locale: .init(identifier: "en_US"),
-        timeZone: .gmt
+      .iso8601(
+        timeZone: .gmt,
+        includingFractionalSeconds: false,
+        dateSeparator: .dash,
+        dateTimeSeparator: .standard,
+        timeSeparator: .omitted
       )
     )
   }
+}
+
+extension Locale {
+  public static let en_US: Self = .init(identifier: "en_US")
 }
