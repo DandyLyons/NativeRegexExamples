@@ -6,6 +6,10 @@ import PackageDescription
 let package = Package(
     name: "NativeRegexExamples",
     platforms: [.iOS(.v16), .macOS(.v13), .macCatalyst(.v16), .tvOS(.v16), .visionOS(.v1), .watchOS(.v9)],
+    dependencies: [
+        .package(url: "https://github.com/pointfreeco/swift-custom-dump.git", from: "1.3.3"), // Custom Dump
+        .package(url: "https://github.com/marmelroy/PhoneNumberKit.git", from: "4.0.0"), // PhoneNumberKit
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -18,6 +22,7 @@ let package = Package(
         .target(
             name: "NativeRegexExamples",
             dependencies: [
+                .product(name: "PhoneNumberKit", package: "phonenumberkit"), // also available: PhoneNumberKit-Static, PhoneNumberKit-Dynamic
             ],
             swiftSettings: [
               .enableUpcomingFeature("BareSlashRegexLiterals"),

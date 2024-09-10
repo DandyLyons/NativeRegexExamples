@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "75F3603A-BFE4-43CD-8085-4EFA6AFC5B3E",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "NativeRegexExamplesTests",
+        "name" : "NativeRegexExamplesTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -14,6 +14,7 @@ let package = Package(
   ],
   dependencies: [
     .package(url: "https://github.com/pointfreeco/swift-custom-dump.git", from: "1.3.3"), // Custom Dump
+    .package(url: "https://github.com/marmelroy/PhoneNumberKit.git", from: "4.0.0"), // PhoneNumberKit
   ],
   targets: [
     // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -21,7 +22,8 @@ let package = Package(
     .target(
       name: "NativeRegexExamples",
       dependencies: [
-        .product(name: "CustomDump", package: "swift-custom-dump"),
+        .product(name: "CustomDump", package: "swift-custom-dump"), // CustomDump
+        .product(name: "PhoneNumberKit", package: "phonenumberkit"), // also available: PhoneNumberKit-Static, PhoneNumberKit-Dynamic
       ]
     ),
     .testTarget(
