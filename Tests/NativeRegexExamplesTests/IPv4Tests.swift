@@ -38,6 +38,14 @@ some other text ⬛︎⬛︎⬛︎
 """
     expectNoDifference(expected, text)
   }
+  
+  @Test(arguments: [String]())
+  func falsePositives(_ input: String) {
+    withKnownIssue("False positive match found: \(input)") {
+      let not_wholeMatch = input.wholeMatch(of: RegexLiterals.ipv4)
+      #expect(not_wholeMatch == nil)
+    }
+  }
 }
 
 @Suite(.tags(.builderDSL, .ipv4))
@@ -75,5 +83,13 @@ some other text 127.0.0.1
 some other text ⬛︎⬛︎⬛︎
 """
     expectNoDifference(expected, text)
+  }
+  
+  @Test(arguments: [String]())
+  func falsePositives(_ input: String) {
+    withKnownIssue("False positive match found: \(input)") {
+      let not_wholeMatch = input.wholeMatch(of: RegexBuilders.ipv4)
+      #expect(not_wholeMatch == nil)
+    }
   }
 }

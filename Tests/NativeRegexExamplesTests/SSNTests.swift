@@ -40,6 +40,14 @@ some other text ⬛︎⬛︎⬛︎
 """
     expectNoDifference(expected, text)
   }
+  
+  @Test(arguments: [String]())
+  func falsePositives(_ input: String) {
+    withKnownIssue("False positive match found: \(input)") {
+      let not_wholeMatch = input.wholeMatch(of: RegexLiterals.ssn)
+      #expect(not_wholeMatch == nil)
+    }
+  }
 }
 
 @Suite(.tags(.builderDSL, .ssn))
@@ -79,5 +87,13 @@ some other text 222-22-2222
 some other text ⬛︎⬛︎⬛︎
 """
     expectNoDifference(expected, text)
+  }
+  
+  @Test(arguments: [String]())
+  func falsePositives(_ input: String) {
+    withKnownIssue("False positive match found: \(input)") {
+      let not_wholeMatch = input.wholeMatch(of: RegexBuilders.ssn)
+      #expect(not_wholeMatch == nil)
+    }
   }
 }

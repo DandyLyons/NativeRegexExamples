@@ -41,15 +41,13 @@ some other text ⬛︎⬛︎⬛︎
     expectNoDifference(expected, text)
   }
   
-  @Test func knownIssues() {
-    let falsePositives = [
-      "02/29/2023", "04/31/2023" // This regex does not handle invalid overflow dates
-    ]
-    for falsePositive in falsePositives {
-      withKnownIssue {
-        let not_wholeMatch = falsePositive.wholeMatch(of: RegexBuilders.date_MM_DD_YYYY)
-        #expect(not_wholeMatch == nil)
-      }
+  @Test(arguments: [
+    "02/29/2023", "04/31/2023" // parser doesn't account for overloaded dates
+  ])
+  func falsePositives(_ input: String) {
+    withKnownIssue("False positive match found: \(input)") {
+      let not_wholeMatch = input.wholeMatch(of: RegexLiterals.date_MM_DD_YYYY)
+      #expect(not_wholeMatch == nil)
     }
   }
 }

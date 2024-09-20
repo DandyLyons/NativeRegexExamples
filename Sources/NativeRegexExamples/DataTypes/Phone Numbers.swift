@@ -69,6 +69,15 @@ public extension RegexBuilders {
 
 
 // MARK: PhoneNumberDataDetector
+/// Experimental detector of phone numbers backed by `NSDataDetector`.
+///
+/// This is experimental and not yet ready for production use.
+/// The phone number validation method used by `NSDataDetector` does not appear to 
+/// have follow a documented standard such as E.164, NANP, or ITU-T E.212.
+/// As such, we can't predict what the output will look like. Apple does not 
+/// publicly document the algorithm used for phone number detection, so it is 
+/// not possible to deterministically predict what phone numbers will be matched. 
+@_spi(Experimental)
 public struct PhoneNumberDataDetector: CustomConsumingRegexComponent {
     public typealias RegexOutput = String
     public func consuming(
@@ -81,7 +90,7 @@ public struct PhoneNumberDataDetector: CustomConsumingRegexComponent {
         let types: NSTextCheckingResult.CheckingType = [.phoneNumber]
         let detector = try NSDataDetector(types: types.rawValue)
         let swiftRange = index..<input.endIndex
-        let nsRange = NSRange(swiftRange, in: input) // Fatal error: String index is out of bounds
+        let nsRange = NSRange(swiftRange, in: input)
         detector.enumerateMatches(
             in: input,
             options: [],
@@ -103,6 +112,7 @@ public struct PhoneNumberDataDetector: CustomConsumingRegexComponent {
 }
 
 public extension RegexCustomParsers {
+    @_spi(Experimental)
     static let phoneNumberDataDetector = Regex {
         ChoiceOf {
             Anchor.startOfLine
@@ -151,7 +161,6 @@ public struct PhoneNumberKitCustomRegexComponent: CustomConsumingRegexComponent 
         startingAt index: String.Index,
         in bounds: Range<String.Index>
     ) throws -> (upperBound: String.Index, output: String)? {
-        var input = input
         var result: (upperBound: String.Index, output: String)?
         
         let phoneNumberUtility = PhoneNumberUtility()

@@ -36,6 +36,14 @@ some other text ⬛︎⬛︎⬛︎
 """
     expectNoDifference(expected, text)
   }
+  
+  @Test(arguments: [String]())
+  func falsePositives(_ input: String) {
+    withKnownIssue("False positive match found: \(input)") {
+      let not_wholeMatch = input.wholeMatch(of: RegexLiterals.email)
+      #expect(not_wholeMatch == nil)
+    }
+  }
 }
 
 @Suite(.tags(.builderDSL, .email))
@@ -71,6 +79,14 @@ some other text myemail@example.org
 some other text ⬛︎⬛︎⬛︎
 """
     expectNoDifference(expected, text)
+  }
+  
+  @Test(arguments: [String]())
+  func falsePositives(_ input: String) {
+    withKnownIssue("False positive match found: \(input)") {
+      let not_wholeMatch = input.wholeMatch(of: RegexBuilders.email)
+      #expect(not_wholeMatch == nil)
+    }
   }
 }
 
