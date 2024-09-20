@@ -1,25 +1,38 @@
-name: Swift
-
+name: CI
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
-
+  workflow_dispatch:
 jobs:
-  build:
-    runs-on: macos-latest
-
+  main:
+    name: Build & Test (Swift v${{ matrix.swift }} on ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        swift: ["5"]
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Swift
-      uses: swift-actions/setup-swift@v1
-      with:
-        swift-version: '6.0'
-    
-    - name: Build
-      run: swift build -v
-    
-    - name: Run tests
-      run: swift test -v
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: "Use Swift v${{ matrix.swift }}"
+        uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: ${{ matrix.swift }}
+      - name: Display Swift version
+        run: swift --version
+      - name: Build
+        run: swift build
+      # Testing only supported with Swift >= 6.0
+  beta:
+    name: Build & Test (beta)
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Use Swift v6.0
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "16.0"
+      - name: Build
+        run: swift build
+      - name: Test
+        run: swift test --enable-swift-testing
