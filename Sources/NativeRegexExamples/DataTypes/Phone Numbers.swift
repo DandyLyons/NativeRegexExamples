@@ -70,6 +70,12 @@ public extension RegexBuilders {
 
 // MARK: PhoneNumberDataDetector
 /// Experimental detector of phone numbers backed by `NSDataDetector`.
+/// 
+/// I haven't confirmed this yet, but it seems like `CustomConsumingRegexComponent`
+/// is straight up broken when used in `string.ranges(of:)`, `replace()`, `matches(of:)` or 
+/// most other Regex api. This appears to be because the method only allows you to declare the 
+/// end (upperBound) of your match, and not the beginning. 
+/// For more info see: https://forums.swift.org/t/is-customconsumingregexcomponent-incapable-of-declaring-the-start-of-a-match/74718
 ///
 /// This is experimental and not yet ready for production use.
 /// The phone number validation method used by `NSDataDetector` does not appear to 
