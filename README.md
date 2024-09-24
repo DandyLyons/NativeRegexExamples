@@ -16,6 +16,8 @@
 	- replacing capabilities
 
 ## Basic Usage
+The library provides three name spaces: `RegexLiterals`, `RegexBuilders`, and `RegexCustomParsers`. Simply add a `.` to any of these name spaces to see the available Regex's. 
+
 ```swift 
 @RegexActor
 func foo() {
