@@ -2,11 +2,15 @@
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FDandyLyons%2FNativeRegexExamples%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/DandyLyons/NativeRegexExamples)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FDandyLyons%2FNativeRegexExamples%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/DandyLyons/NativeRegexExamples)
 
-NativeRegexExamples is a place for the Swift community to: 
-1. crowd-source `Regex` solutions that can be used in your projects
-2. learn from each other and develop best practices
+## I'm Job Hunting
+👋🏼 My name is Daniel Lyons, I'm a Swift developer, and I'm currently looking for a job. I hope this package is helpful for you and the community. If so, **please consider viewing and sharing my developer site with others**: [dandylyons.github.io](https://dandylyons.github.io). 🙏🏼 
+
+## Purpose
+**NativeRegexExamples** is a place for the Swift community to: 
+1. **crowd-source** `Regex` solutions that can be used in your projects
+2. **learn** from each other and develop best practices
 	- Provide cheat sheets
-3. test Regexes for: 
+3. **test** Regexes for: 
 	- matches: so we can assess their capabilities
 	- non-matches: so we can eliminate false positives
 	- replacing capabilities
@@ -158,6 +162,9 @@ The project is in an early development phase. Current goals:
 - [ ] **Documentation**: Ensure accuracy and completeness of documentation and include code examples.
 
 Your contributions are very welcome! 
+
+## Thank Yous
+- the **iOS Code Review** newsletter for featuring us in [Issue #71](https://ioscodereview.com/issues/71/). 
 
 ## Star History
 
